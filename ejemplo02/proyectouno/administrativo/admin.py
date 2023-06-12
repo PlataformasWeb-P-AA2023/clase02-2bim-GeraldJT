@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Importar las clases del modelo
-from administrativo.models import Estudiante
+from administrativo.models import Estudiante, Pais
 
 # Se crea una clase que hereda
 # de ModelAdmin para el modelo
@@ -18,3 +18,11 @@ class EstudianteAdmin(admin.ModelAdmin):
 # el primer argumento es el modelo (Estudiante)
 # el segundo argumento la clase EstudianteAdmin
 admin.site.register(Estudiante, EstudianteAdmin)
+#admin.site.register(Estudiante)
+
+class PaisAdmin(admin.ModelAdmin):
+    list_display = ('id', 'nombre', 'capital')
+    search_fields = ('id','capital', 'nombre')
+
+admin.site.register(Pais, PaisAdmin)
+
