@@ -15,6 +15,7 @@ class Estudiante(models.Model):
 class NumeroTelefonico(models.Model):
     telefono = models.CharField(max_length=100)
     tipo = models.CharField(max_length=100)
+    # se crea una llave foranea  de tipo Estudiante y se elimina todos los registros de la tabla que hace referencia.
     estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE, \
             related_name="numeros_telefonicos")
 
